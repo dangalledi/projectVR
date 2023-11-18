@@ -9,11 +9,11 @@ public class Cubo : MonoBehaviour
     
     private void Awake()
     {
-        control = new ControlesMando();
-        OnEnabled();
-        control.Juego.Aumentar.performed += ctx => Aumentar();
+        //control = new ControlesMando();
+        //OnEnabled();
+        //control.Juego.Aumentar.performed += ctx => Aumentar();
 
-        control.Juego.Disminuir.performed += ctx => Disminuir();
+        //control.Juego.Disminuir.performed += ctx => Disminuir();
         
     }
 
@@ -23,7 +23,7 @@ public class Cubo : MonoBehaviour
         float z = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw ("Vertical");
 
-        transform.Translate(0, y * Time.deltaTime, z * Time.deltaTime);
+        //transform.Translate(0, y * Time.deltaTime, z * Time.deltaTime);
     }
 
     void Aumentar()

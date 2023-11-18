@@ -48,6 +48,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Personaje",
+            "id": "e5507cdb-9960-432d-b5dd-07e2bad25f70",
+            "actions": [
+                {
+                    "name": "Seleccionar",
+                    "type": "Button",
+                    "id": "80b7885f-95d0-49b4-9401-d7a0b5264494",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eda4d834-00cf-4397-bd88-271d1f857d48",
+                    "path": "<DualSenseGamepadHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Seleccionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

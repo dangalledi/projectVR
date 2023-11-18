@@ -70,6 +70,34 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Personaje"",
+            ""id"": ""e5507cdb-9960-432d-b5dd-07e2bad25f70"",
+            ""actions"": [
+                {
+                    ""name"": ""Seleccionar"",
+                    ""type"": ""Button"",
+                    ""id"": ""80b7885f-95d0-49b4-9401-d7a0b5264494"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""eda4d834-00cf-4397-bd88-271d1f857d48"",
+                    ""path"": ""<DualSenseGamepadHID>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Seleccionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -78,6 +106,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         m_Juego = asset.FindActionMap("Juego", throwIfNotFound: true);
         m_Juego_Aumentar = m_Juego.FindAction("Aumentar", throwIfNotFound: true);
         m_Juego_Disminuir = m_Juego.FindAction("Disminuir", throwIfNotFound: true);
+        // Personaje
+        m_Personaje = asset.FindActionMap("Personaje", throwIfNotFound: true);
+        m_Personaje_Seleccionar = m_Personaje.FindAction("Seleccionar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -189,9 +220,59 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         }
     }
     public JuegoActions @Juego => new JuegoActions(this);
+
+    // Personaje
+    private readonly InputActionMap m_Personaje;
+    private List<IPersonajeActions> m_PersonajeActionsCallbackInterfaces = new List<IPersonajeActions>();
+    private readonly InputAction m_Personaje_Seleccionar;
+    public struct PersonajeActions
+    {
+        private @ControlesMando m_Wrapper;
+        public PersonajeActions(@ControlesMando wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Seleccionar => m_Wrapper.m_Personaje_Seleccionar;
+        public InputActionMap Get() { return m_Wrapper.m_Personaje; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PersonajeActions set) { return set.Get(); }
+        public void AddCallbacks(IPersonajeActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PersonajeActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PersonajeActionsCallbackInterfaces.Add(instance);
+            @Seleccionar.started += instance.OnSeleccionar;
+            @Seleccionar.performed += instance.OnSeleccionar;
+            @Seleccionar.canceled += instance.OnSeleccionar;
+        }
+
+        private void UnregisterCallbacks(IPersonajeActions instance)
+        {
+            @Seleccionar.started -= instance.OnSeleccionar;
+            @Seleccionar.performed -= instance.OnSeleccionar;
+            @Seleccionar.canceled -= instance.OnSeleccionar;
+        }
+
+        public void RemoveCallbacks(IPersonajeActions instance)
+        {
+            if (m_Wrapper.m_PersonajeActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPersonajeActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PersonajeActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PersonajeActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PersonajeActions @Personaje => new PersonajeActions(this);
     public interface IJuegoActions
     {
         void OnAumentar(InputAction.CallbackContext context);
         void OnDisminuir(InputAction.CallbackContext context);
+    }
+    public interface IPersonajeActions
+    {
+        void OnSeleccionar(InputAction.CallbackContext context);
     }
 }
