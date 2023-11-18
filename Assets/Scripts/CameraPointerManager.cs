@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CameraPointerManager : MonoBehaviour
 {
+    public static CameraPointerManager Instance;
     [SerializeField] private GameObject pointer;
     [SerializeField] private float maxDistancePointer = 4.5f;
     [SerializeField] private float disPointerObject = 0.95f;
@@ -16,6 +17,18 @@ public class CameraPointerManager : MonoBehaviour
     private readonly string interactableTag = "interactable";
     private float scaleSize = 0.025f;
 
+    [HideInInspector]
+    public Vector3 hitPoint;
+    private void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else{
+            Instance = this;
+        }
+    }
     private void Start()
     {
         GazeManager.Instance.OnGazeSelection += GazeSelection;
@@ -34,6 +47,7 @@ public class CameraPointerManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _RETICLE_MAX_DISTANCE))
         {
+            hitPoint = hit.point;
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)
             {
