@@ -7,21 +7,35 @@ public class MovPersonaje : MonoBehaviour
 
     ControlesMando control;
 
+    private new Rigidbody rigidbody;
+
+    public float movementSpeed;
+
     private void Awake()
     {
         control = new ControlesMando();
         OnEnabled();
 
         control.Personaje.Seleccionar.performed += ctx => Seleccionar();
-        
+
+        rigidbody = GetComponent<Rigidbody>();
+
+
     }
     private void Update()
     {
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        float hor = Input.GetAxisRaw("Horizontal");
+        float ver = Input.GetAxisRaw("Vertical");
 
-        transform.Translate(x * Time.deltaTime * 2, 0, z * Time.deltaTime * 2);
+        if(ver != 0  || hor != 0 )
+        {
+            Vector3 direccion = (transform.forward * ver + transform.right * hor).normalized;
+
+            rigidbody.velocity = direccion * movementSpeed;
+        }
+
+        //transform.Translate(x * Time.deltaTime, 0, z * Time.deltaTime);
     }
     void Seleccionar()
     {
