@@ -1,0 +1,54 @@
+{
+    "name": "ControlesMando",
+    "maps": [
+        {
+            "name": "Juego",
+            "id": "5e22b60b-284e-44c8-8bba-105710880748",
+            "actions": [
+                {
+                    "name": "Aumentar",
+                    "type": "Button",
+                    "id": "65c707b0-3764-445e-9b89-23efb0599bae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Disminuir",
+                    "type": "Button",
+                    "id": "d00fabfc-638b-4394-aa92-9de307f29f37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "280ed8c3-baf1-4ffe-bc7d-4aa9d38b5427",
+                    "path": "<DualSenseGamepadHID>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aumentar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ede68a6-cc3d-4b30-b5fb-6fd669f0a1fa",
+                    "path": "<DualSenseGamepadHID>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disminuir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
