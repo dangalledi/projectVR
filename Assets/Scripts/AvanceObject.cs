@@ -4,58 +4,22 @@ using UnityEngine;
 
 public class AvanceObject : MonoBehaviour
 {
+    public Transform teleportTarget;
+    public GameObject thePlayer;
 
-    /// <summary>
-    /// The material to use when this object is inactive (not being gazed at).
-    /// </summary>
-    public Material InactiveMaterial;
-
-    /// <summary>
-    /// The material to use when this object is active (gazed at).
-    /// </summary>
-    public Material GazedAtMaterial;
-
-
-    public CharacterController characterController;
-    private Renderer _myRenderer;
-
-
-    private void Start()
+    public void OnTriggerEnter(Collider other)
     {
-        characterController = GetComponent<CharacterController>();
-        SetMaterial(false);
-
-    }
-
-    private void Update()
-    {
-        characterController.Move(new Vector3(5.0f, 0, 0));
-        SetMaterial(false);
+        float x = teleportTarget.transform.position.x;
+        float z = teleportTarget.transform.position.z;
+        thePlayer.transform.position = new Vector3(x, thePlayer.transform.position.y, z);
 
     }
     public void OnPointerClick()
     {
-        characterController.Move(new Vector3 (5.0f, 0, 0));
-
-    }
-    public void OnPointerEnter()
-    {
-        SetMaterial(true);
+        float x = teleportTarget.transform.position.x;
+        float z = teleportTarget.transform.position.z;
+        thePlayer.transform.position = new Vector3(x, thePlayer.transform.position.y, z);
     }
 
-    /// <summary>
-    /// This method is called by the Main Camera when it stops gazing at this GameObject.
-    /// </summary>
-    public void OnPointerExit()
-    {
-        SetMaterial(false);
-    }
 
-    private void SetMaterial(bool gazedAt)
-    {
-        if (InactiveMaterial != null && GazedAtMaterial != null)
-        {
-            _myRenderer.material = gazedAt ? GazedAtMaterial : InactiveMaterial;
-        }
-    }
 }

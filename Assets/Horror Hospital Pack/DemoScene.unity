@@ -155,9 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f6eb6526ae29c4c91d2981ac5a477b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 0}
-  GazedAtMaterial: {fileID: 0}
-  characterController: {fileID: 0}
+  teleportTarget: {fileID: 7299780}
+  thePlayer: {fileID: 766796100}
 --- !u!65 &7299777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2113,9 +2112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f6eb6526ae29c4c91d2981ac5a477b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 0}
-  GazedAtMaterial: {fileID: 0}
-  characterController: {fileID: 0}
+  teleportTarget: {fileID: 467938894}
+  thePlayer: {fileID: 766796100}
 --- !u!65 &467938891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4542,9 +4540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f6eb6526ae29c4c91d2981ac5a477b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 0}
-  GazedAtMaterial: {fileID: 0}
-  characterController: {fileID: 0}
+  teleportTarget: {fileID: 1291568329}
+  thePlayer: {fileID: 766796100}
 --- !u!65 &1291568326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5156,9 +5153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f6eb6526ae29c4c91d2981ac5a477b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 0}
-  GazedAtMaterial: {fileID: 0}
-  characterController: {fileID: 0}
+  teleportTarget: {fileID: 1456547710}
+  thePlayer: {fileID: 766796100}
 --- !u!65 &1456547707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6363,9 +6359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f6eb6526ae29c4c91d2981ac5a477b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 0}
-  GazedAtMaterial: {fileID: 0}
-  characterController: {fileID: 0}
+  teleportTarget: {fileID: 1751622594}
+  thePlayer: {fileID: 766796100}
 --- !u!1 &1759352129
 GameObject:
   m_ObjectHideFlags: 0
