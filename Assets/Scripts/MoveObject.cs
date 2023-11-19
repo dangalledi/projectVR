@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
 
@@ -29,19 +30,22 @@ public class MoveObject : MonoBehaviour
     private void Update()
     {
         if (activeObj)
-        {
-            control.Personaje.Arriba.performed += ctx => MoverArriba();
-            control.Personaje.Abajo.performed += ctx => MoverAbajo();
+        { 
 
             Vector2 vars = control.Personaje.Jock2.ReadValue<Vector2>();
-            
+
             float horizontalRotation = vars.x * 100f * Time.deltaTime;
             float verticalRotation = vars.y * 100f * Time.deltaTime;
 
             // Aplica la rotación
             transform.Rotate(Vector3.up, horizontalRotation);
             transform.Rotate(Vector3.right, verticalRotation);
-            
+
+            float cantidadMove = control.Personaje.MoveObjUpDown.ReadValue<float>();
+
+            // Aplica la traslación
+            gameObject.transform.localPosition += new Vector3(0, cantidadMove, 0) * Time.deltaTime;
+
 
             if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {

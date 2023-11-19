@@ -85,24 +85,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Arriba"",
-                    ""type"": ""Button"",
-                    ""id"": ""213da576-178a-44c6-b03e-d182c2bad703"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Abajo"",
-                    ""type"": ""Button"",
-                    ""id"": ""fa9e1e15-b183-489d-b92d-f701b3b59a2b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Derecha"",
                     ""type"": ""Button"",
                     ""id"": ""ea6f5a06-9bcd-4539-82db-46fbc740585e"",
@@ -137,6 +119,15 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveObjUpDown"",
+                    ""type"": ""Value"",
+                    ""id"": ""fcf94bc5-b54e-428f-8e8f-3ac15527814e"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -148,28 +139,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Seleccionar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4b0e8568-e4c8-4b4b-8b0e-0d8ac79f106e"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Arriba"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0c015ca7-656c-4ea4-88c6-36533bbcd976"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Abajo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -260,6 +229,39 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""action"": ""Jock2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""88da2642-2e00-4a43-83e8-b7b12ec35ae5"",
+                    ""path"": ""1DAxis(minValue=-0.2,maxValue=0.2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObjUpDown"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""5b25d63e-b9e5-477a-8aa9-2a119d0c3b98"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObjUpDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""01f2f454-139a-48de-b85c-60fb075dfca7"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObjUpDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -273,12 +275,11 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         // Personaje
         m_Personaje = asset.FindActionMap("Personaje", throwIfNotFound: true);
         m_Personaje_Seleccionar = m_Personaje.FindAction("Seleccionar", throwIfNotFound: true);
-        m_Personaje_Arriba = m_Personaje.FindAction("Arriba", throwIfNotFound: true);
-        m_Personaje_Abajo = m_Personaje.FindAction("Abajo", throwIfNotFound: true);
         m_Personaje_Derecha = m_Personaje.FindAction("Derecha", throwIfNotFound: true);
         m_Personaje_Izquierda = m_Personaje.FindAction("Izquierda", throwIfNotFound: true);
         m_Personaje_Deseleccionar = m_Personaje.FindAction("Deseleccionar", throwIfNotFound: true);
         m_Personaje_Jock2 = m_Personaje.FindAction("Jock2", throwIfNotFound: true);
+        m_Personaje_MoveObjUpDown = m_Personaje.FindAction("MoveObjUpDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -395,23 +396,21 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Personaje;
     private List<IPersonajeActions> m_PersonajeActionsCallbackInterfaces = new List<IPersonajeActions>();
     private readonly InputAction m_Personaje_Seleccionar;
-    private readonly InputAction m_Personaje_Arriba;
-    private readonly InputAction m_Personaje_Abajo;
     private readonly InputAction m_Personaje_Derecha;
     private readonly InputAction m_Personaje_Izquierda;
     private readonly InputAction m_Personaje_Deseleccionar;
     private readonly InputAction m_Personaje_Jock2;
+    private readonly InputAction m_Personaje_MoveObjUpDown;
     public struct PersonajeActions
     {
         private @ControlesMando m_Wrapper;
         public PersonajeActions(@ControlesMando wrapper) { m_Wrapper = wrapper; }
         public InputAction @Seleccionar => m_Wrapper.m_Personaje_Seleccionar;
-        public InputAction @Arriba => m_Wrapper.m_Personaje_Arriba;
-        public InputAction @Abajo => m_Wrapper.m_Personaje_Abajo;
         public InputAction @Derecha => m_Wrapper.m_Personaje_Derecha;
         public InputAction @Izquierda => m_Wrapper.m_Personaje_Izquierda;
         public InputAction @Deseleccionar => m_Wrapper.m_Personaje_Deseleccionar;
         public InputAction @Jock2 => m_Wrapper.m_Personaje_Jock2;
+        public InputAction @MoveObjUpDown => m_Wrapper.m_Personaje_MoveObjUpDown;
         public InputActionMap Get() { return m_Wrapper.m_Personaje; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -424,12 +423,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Seleccionar.started += instance.OnSeleccionar;
             @Seleccionar.performed += instance.OnSeleccionar;
             @Seleccionar.canceled += instance.OnSeleccionar;
-            @Arriba.started += instance.OnArriba;
-            @Arriba.performed += instance.OnArriba;
-            @Arriba.canceled += instance.OnArriba;
-            @Abajo.started += instance.OnAbajo;
-            @Abajo.performed += instance.OnAbajo;
-            @Abajo.canceled += instance.OnAbajo;
             @Derecha.started += instance.OnDerecha;
             @Derecha.performed += instance.OnDerecha;
             @Derecha.canceled += instance.OnDerecha;
@@ -442,6 +435,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Jock2.started += instance.OnJock2;
             @Jock2.performed += instance.OnJock2;
             @Jock2.canceled += instance.OnJock2;
+            @MoveObjUpDown.started += instance.OnMoveObjUpDown;
+            @MoveObjUpDown.performed += instance.OnMoveObjUpDown;
+            @MoveObjUpDown.canceled += instance.OnMoveObjUpDown;
         }
 
         private void UnregisterCallbacks(IPersonajeActions instance)
@@ -449,12 +445,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Seleccionar.started -= instance.OnSeleccionar;
             @Seleccionar.performed -= instance.OnSeleccionar;
             @Seleccionar.canceled -= instance.OnSeleccionar;
-            @Arriba.started -= instance.OnArriba;
-            @Arriba.performed -= instance.OnArriba;
-            @Arriba.canceled -= instance.OnArriba;
-            @Abajo.started -= instance.OnAbajo;
-            @Abajo.performed -= instance.OnAbajo;
-            @Abajo.canceled -= instance.OnAbajo;
             @Derecha.started -= instance.OnDerecha;
             @Derecha.performed -= instance.OnDerecha;
             @Derecha.canceled -= instance.OnDerecha;
@@ -467,6 +457,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Jock2.started -= instance.OnJock2;
             @Jock2.performed -= instance.OnJock2;
             @Jock2.canceled -= instance.OnJock2;
+            @MoveObjUpDown.started -= instance.OnMoveObjUpDown;
+            @MoveObjUpDown.performed -= instance.OnMoveObjUpDown;
+            @MoveObjUpDown.canceled -= instance.OnMoveObjUpDown;
         }
 
         public void RemoveCallbacks(IPersonajeActions instance)
@@ -492,11 +485,10 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     public interface IPersonajeActions
     {
         void OnSeleccionar(InputAction.CallbackContext context);
-        void OnArriba(InputAction.CallbackContext context);
-        void OnAbajo(InputAction.CallbackContext context);
         void OnDerecha(InputAction.CallbackContext context);
         void OnIzquierda(InputAction.CallbackContext context);
         void OnDeseleccionar(InputAction.CallbackContext context);
         void OnJock2(InputAction.CallbackContext context);
+        void OnMoveObjUpDown(InputAction.CallbackContext context);
     }
 }

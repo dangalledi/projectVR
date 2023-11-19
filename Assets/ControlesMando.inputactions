@@ -63,24 +63,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Arriba",
-                    "type": "Button",
-                    "id": "213da576-178a-44c6-b03e-d182c2bad703",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Abajo",
-                    "type": "Button",
-                    "id": "fa9e1e15-b183-489d-b92d-f701b3b59a2b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Derecha",
                     "type": "Button",
                     "id": "ea6f5a06-9bcd-4539-82db-46fbc740585e",
@@ -115,6 +97,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MoveObjUpDown",
+                    "type": "Value",
+                    "id": "fcf94bc5-b54e-428f-8e8f-3ac15527814e",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -126,28 +117,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Seleccionar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4b0e8568-e4c8-4b4b-8b0e-0d8ac79f106e",
-                    "path": "<Gamepad>/dpad/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Arriba",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0c015ca7-656c-4ea4-88c6-36533bbcd976",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Abajo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -236,6 +205,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jock2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "88da2642-2e00-4a43-83e8-b7b12ec35ae5",
+                    "path": "1DAxis(minValue=-0.2,maxValue=0.2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjUpDown",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5b25d63e-b9e5-477a-8aa9-2a119d0c3b98",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjUpDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "01f2f454-139a-48de-b85c-60fb075dfca7",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjUpDown",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
