@@ -9,13 +9,12 @@ using UnityEngine.InputSystem;
 
 public class MoveObject : MonoBehaviour
 {
-    public Inventario inventario;
     public GameObject thePlayer;
-    public InventoryManager inventoryManager;
+    private InventoryManager inventoryManager;
 
     private bool activeObj = false;
     ControlesMando control;
-    public ItemInventario item;
+  
 
     private void Awake()
     {
@@ -25,7 +24,6 @@ public class MoveObject : MonoBehaviour
 
     private void Start()
     {
-        inventario = thePlayer.GetComponent<Inventario>();
         activeObj = false;
         gameObject.SetActive(true);
     }
@@ -52,12 +50,12 @@ public class MoveObject : MonoBehaviour
 
             if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {
-                item = gameObject.GetComponent<ItemInventario>();
+                ItemComponent item = gameObject.GetComponent<ItemComponent>();
                 activeObj = false;
                 if (item != null)
                 {
                     inventoryManager.AddItem(item);
-                    Destroy(gameObject); // Destruye el objeto de la llave para que no se pueda recoger de nuevo
+                   // Destroy(gameObject); // Destruye el objeto de la llave para que no se pueda recoger de nuevo
                 }
                 //gameObject.SetActive(false);
 

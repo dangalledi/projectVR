@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<ItemInventario> items = new List<ItemInventario>(); // La lista de ítems en el inventario
+    public List<ItemComponent> items = new List<ItemComponent>(); // La lista de ítems en el inventario
     public GameObject slotPrefab; // El prefab del slot de inventario
     public Transform inventoryPanel; // La referencia al panel que contiene los slots
 
@@ -13,13 +13,13 @@ public class InventoryManager : MonoBehaviour
         UpdateInventoryUI();
     }
 
-    public void AddItem(ItemInventario itemToAdd)
+    public void AddItem(ItemComponent itemToAdd)
     {
         items.Add(itemToAdd);
         UpdateInventoryUI();
     }
 
-    public void RemoveItem(ItemInventario itemToRemove)
+    public void RemoveItem(ItemComponent itemToRemove)
     {
         items.Remove(itemToRemove);
         UpdateInventoryUI();
@@ -34,24 +34,16 @@ public class InventoryManager : MonoBehaviour
         }
 
         // Crea un nuevo slot para cada ítem en el inventario
-        foreach (ItemInventario item in items)
+        foreach (ItemComponent item in items)
         {
             GameObject newSlot = Instantiate(slotPrefab, inventoryPanel.transform);
-            newSlot.GetComponentInChildren<Image>().sprite = item.icon;
+            newSlot.GetComponentInChildren<Image>().sprite = item.itemData.icon;
             // Configura otros elementos del slot aquí, como texto o cantidad
         }
     }
 
-    private void UseItem(Item item)
+    private void UseItem(ItemComponent item)
     {
         // Implementa la lógica para usar el ítem aquí
     }
-}
-
-[System.Serializable]
-public class Item
-{
-    public string name;
-    public Sprite icon;
-    // Añade aquí más propiedades según sea necesario
 }
