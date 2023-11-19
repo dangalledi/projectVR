@@ -11,9 +11,6 @@ public class MoveObject : MonoBehaviour
     public GameObject thePlayer;
 
     private bool activeObj = false;
-    private readonly float paso = 10.0f;
-    private float inicialY = 0, inicialZ = 0;
-    private Vector2 inicial = Vector2.zero;
     ControlesMando control;
 
     private void Awake()
@@ -26,8 +23,6 @@ public class MoveObject : MonoBehaviour
     {
         inventario = thePlayer.GetComponent<Inventario>();
         activeObj = false;
-        inicialY = 0;
-        inicialZ = 0;
         gameObject.SetActive(true);
     }
 
@@ -55,11 +50,6 @@ public class MoveObject : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-    }
-
-    private void Rotacion(Func<Vector2> readValue)
-    {
-        throw new NotImplementedException();
     }
 
     public void ActivarObjeto()
