@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class AvanceObject : MonoBehaviour
+public class MoveObject : MonoBehaviour
 {
-    //public Transform teleportTarget;
-    //public GameObject thePlayer;
+    public Inventario inventario;
+    public GameObject thePlayer;
 
     private bool activeObj = false;
-
+    private readonly float paso = 10.0f;
+    private float inicialY = 0, inicialZ = 0;
     ControlesMando control;
 
     private void Awake()
@@ -21,7 +22,10 @@ public class AvanceObject : MonoBehaviour
 
     private void Start()
     {
+        inventario = thePlayer.GetComponent<Inventario>();
         activeObj = false;
+        inicialY = 0;
+        inicialZ = 0;
         gameObject.SetActive(true);
     }
 
@@ -32,12 +36,13 @@ public class AvanceObject : MonoBehaviour
             control.Personaje.Arriba.performed += ctx => MoverArriba();
             control.Personaje.Abajo.performed += ctx => MoverAbajo();
 
-            //control.Personaje.Izquierda.performed += ctx => MoveIzquierda();
-            //control.Personaje.Derecha.performed += ctx => MoveDerecha();
+            control.Personaje.Izquierda.performed += ctx => RotarVertical();
+            control.Personaje.Derecha.performed += ctx => RotarHorizontal();
 
             if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {
                 activeObj = false;
+                inventario.AddObject(gameObject);
                 gameObject.SetActive(false);
             }
         }
@@ -45,7 +50,6 @@ public class AvanceObject : MonoBehaviour
 
     public void ActivarObjeto()
     {
-        //Destroy(gameObject);
         activeObj = true;
     }
     private void OnEnabled()
@@ -53,23 +57,25 @@ public class AvanceObject : MonoBehaviour
         control.Personaje.Enable();
     }
 
-    void Aumentar()
+    public void MoverArriba()
     {
-        gameObject.transform.localScale += Vector3.one / 10;
+        gameObject.transform.localPosition += new Vector3(0,0.5f,0);
+    }
+    public void MoverAbajo()
+    {
+        gameObject.transform.localPosition += new Vector3(0, -0.5f, 0);
     }
 
-    void MoverArriba()
+    public void RotarVertical()
     {
-        gameObject.transform.localPosition += new Vector3(0,1,0);
-    }
-    void MoverAbajo()
-    {
-        gameObject.transform.localPosition += new Vector3(0, -1, 0);
+        inicialY += paso;
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, inicialY, inicialZ));
     }
 
-    void Disminuir()
+    public void RotarHorizontal()
     {
-        gameObject.transform.localScale -= Vector3.one / 10;
+        inicialZ += paso;
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, inicialY, inicialZ));
     }
 
     private void OnDisabled()
