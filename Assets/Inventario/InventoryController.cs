@@ -4,11 +4,18 @@ public class InventoryController : MonoBehaviour
 {
     public GameObject inventoryPanel; // Arrastra tu panel de inventario aquí desde el Inspector
     private bool isInventoryActive = false;
+    ControlesMando control;
+
+    private void Awake()
+    {
+        control = new ControlesMando();
+        OnEnabled();
+    }
 
     void Update()
     {
         // Comprueba si el botón del joystick ha sido presionado
-        if (Input.GetButtonDown("Jump")) // Asegúrate de que "Jump" es el nombre del botón que configuraste
+        if (control.Personaje.Inventario.WasPerformedThisFrame())
         {
             // Cambia el estado de la activación del inventario
             isInventoryActive = !isInventoryActive;
@@ -22,5 +29,9 @@ public class InventoryController : MonoBehaviour
 
             Debug.Log("Botón presionado");
         }
+    }
+    private void OnEnabled()
+    {
+        control.Personaje.Enable();
     }
 }

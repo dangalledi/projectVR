@@ -99,6 +99,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Inventario",
+                    "type": "Button",
+                    "id": "5c46e0ed-ab48-49cb-8536-555ea60b8bf9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MoveObjUpDown",
                     "type": "Value",
                     "id": "fcf94bc5-b54e-428f-8e8f-3ac15527814e",
@@ -240,6 +249,17 @@
                     "action": "MoveObjUpDown",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "53a99109-582c-4b89-b184-74d367486476",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventario",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

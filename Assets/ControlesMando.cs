@@ -121,6 +121,15 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Inventario"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c46e0ed-ab48-49cb-8536-555ea60b8bf9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""MoveObjUpDown"",
                     ""type"": ""Value"",
                     ""id"": ""fcf94bc5-b54e-428f-8e8f-3ac15527814e"",
@@ -262,6 +271,17 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""action"": ""MoveObjUpDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53a99109-582c-4b89-b184-74d367486476"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventario"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -279,6 +299,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         m_Personaje_Izquierda = m_Personaje.FindAction("Izquierda", throwIfNotFound: true);
         m_Personaje_Deseleccionar = m_Personaje.FindAction("Deseleccionar", throwIfNotFound: true);
         m_Personaje_Jock2 = m_Personaje.FindAction("Jock2", throwIfNotFound: true);
+        m_Personaje_Inventario = m_Personaje.FindAction("Inventario", throwIfNotFound: true);
         m_Personaje_MoveObjUpDown = m_Personaje.FindAction("MoveObjUpDown", throwIfNotFound: true);
     }
 
@@ -400,6 +421,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     private readonly InputAction m_Personaje_Izquierda;
     private readonly InputAction m_Personaje_Deseleccionar;
     private readonly InputAction m_Personaje_Jock2;
+    private readonly InputAction m_Personaje_Inventario;
     private readonly InputAction m_Personaje_MoveObjUpDown;
     public struct PersonajeActions
     {
@@ -410,6 +432,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         public InputAction @Izquierda => m_Wrapper.m_Personaje_Izquierda;
         public InputAction @Deseleccionar => m_Wrapper.m_Personaje_Deseleccionar;
         public InputAction @Jock2 => m_Wrapper.m_Personaje_Jock2;
+        public InputAction @Inventario => m_Wrapper.m_Personaje_Inventario;
         public InputAction @MoveObjUpDown => m_Wrapper.m_Personaje_MoveObjUpDown;
         public InputActionMap Get() { return m_Wrapper.m_Personaje; }
         public void Enable() { Get().Enable(); }
@@ -435,6 +458,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Jock2.started += instance.OnJock2;
             @Jock2.performed += instance.OnJock2;
             @Jock2.canceled += instance.OnJock2;
+            @Inventario.started += instance.OnInventario;
+            @Inventario.performed += instance.OnInventario;
+            @Inventario.canceled += instance.OnInventario;
             @MoveObjUpDown.started += instance.OnMoveObjUpDown;
             @MoveObjUpDown.performed += instance.OnMoveObjUpDown;
             @MoveObjUpDown.canceled += instance.OnMoveObjUpDown;
@@ -457,6 +483,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Jock2.started -= instance.OnJock2;
             @Jock2.performed -= instance.OnJock2;
             @Jock2.canceled -= instance.OnJock2;
+            @Inventario.started -= instance.OnInventario;
+            @Inventario.performed -= instance.OnInventario;
+            @Inventario.canceled -= instance.OnInventario;
             @MoveObjUpDown.started -= instance.OnMoveObjUpDown;
             @MoveObjUpDown.performed -= instance.OnMoveObjUpDown;
             @MoveObjUpDown.canceled -= instance.OnMoveObjUpDown;
@@ -489,6 +518,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         void OnIzquierda(InputAction.CallbackContext context);
         void OnDeseleccionar(InputAction.CallbackContext context);
         void OnJock2(InputAction.CallbackContext context);
+        void OnInventario(InputAction.CallbackContext context);
         void OnMoveObjUpDown(InputAction.CallbackContext context);
     }
 }
