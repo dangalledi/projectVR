@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class MoveObject : MonoBehaviour
     private bool activeObj = false;
     private readonly float paso = 10.0f;
     private float inicialY = 0, inicialZ = 0;
+    private Vector2 inicial = Vector2.zero;
     ControlesMando control;
 
     private void Awake()
@@ -36,8 +38,15 @@ public class MoveObject : MonoBehaviour
             control.Personaje.Arriba.performed += ctx => MoverArriba();
             control.Personaje.Abajo.performed += ctx => MoverAbajo();
 
-            control.Personaje.Izquierda.performed += ctx => RotarVertical();
-            control.Personaje.Derecha.performed += ctx => RotarHorizontal();
+            Vector2 vars = control.Personaje.Jock2.ReadValue<Vector2>();
+            
+            float horizontalRotation = vars.x * 100f * Time.deltaTime;
+            float verticalRotation = vars.y * 100f * Time.deltaTime;
+
+            // Aplica la rotación
+            transform.Rotate(Vector3.up, horizontalRotation);
+            transform.Rotate(Vector3.right, verticalRotation);
+            
 
             if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {
@@ -46,6 +55,11 @@ public class MoveObject : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    private void Rotacion(Func<Vector2> readValue)
+    {
+        throw new NotImplementedException();
     }
 
     public void ActivarObjeto()
@@ -64,18 +78,6 @@ public class MoveObject : MonoBehaviour
     public void MoverAbajo()
     {
         gameObject.transform.localPosition += new Vector3(0, -0.5f, 0);
-    }
-
-    public void RotarVertical()
-    {
-        inicialY += paso;
-        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, inicialY, inicialZ));
-    }
-
-    public void RotarHorizontal()
-    {
-        inicialZ += paso;
-        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, inicialY, inicialZ));
     }
 
     private void OnDisabled()

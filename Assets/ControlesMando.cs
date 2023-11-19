@@ -128,13 +128,22 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jock2"",
+                    ""type"": ""Value"",
+                    ""id"": ""cd94b17b-9653-406b-880d-a355f707573a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""eda4d834-00cf-4397-bd88-271d1f857d48"",
-                    ""path"": ""<DualSenseGamepadHID>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -145,7 +154,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4b0e8568-e4c8-4b4b-8b0e-0d8ac79f106e"",
-                    ""path"": ""<DualSenseGamepadHID>/dpad/up"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -156,7 +165,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0c015ca7-656c-4ea4-88c6-36533bbcd976"",
-                    ""path"": ""<DualSenseGamepadHID>/dpad/down"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -167,7 +176,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d94af1e8-9df9-4dea-a85c-2d3e5c1c0c1b"",
-                    ""path"": ""<DualSenseGamepadHID>/dpad/right"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -178,7 +187,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""50cde4b5-e019-4b0b-9f6a-8f4328efac22"",
-                    ""path"": ""<DualSenseGamepadHID>/dpad/left"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -189,13 +198,68 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""07a05ee7-c4e6-4db3-966e-7a6406c261fa"",
-                    ""path"": ""<DualSenseGamepadHID>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Deseleccionar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""732d6ea0-888d-41cc-84af-3bfc857c43f8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jock2"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""52e1c070-c292-4e78-abaf-449fac2403d9"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jock2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""31f0195e-35c5-4f85-b76b-5b4cfe29fcca"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jock2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4c46b563-fddc-4f8d-b656-f66c62c972e1"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jock2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""59f42e48-3ed3-4996-bf4b-be2ed26d709e"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jock2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -214,6 +278,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         m_Personaje_Derecha = m_Personaje.FindAction("Derecha", throwIfNotFound: true);
         m_Personaje_Izquierda = m_Personaje.FindAction("Izquierda", throwIfNotFound: true);
         m_Personaje_Deseleccionar = m_Personaje.FindAction("Deseleccionar", throwIfNotFound: true);
+        m_Personaje_Jock2 = m_Personaje.FindAction("Jock2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -335,6 +400,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     private readonly InputAction m_Personaje_Derecha;
     private readonly InputAction m_Personaje_Izquierda;
     private readonly InputAction m_Personaje_Deseleccionar;
+    private readonly InputAction m_Personaje_Jock2;
     public struct PersonajeActions
     {
         private @ControlesMando m_Wrapper;
@@ -345,6 +411,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         public InputAction @Derecha => m_Wrapper.m_Personaje_Derecha;
         public InputAction @Izquierda => m_Wrapper.m_Personaje_Izquierda;
         public InputAction @Deseleccionar => m_Wrapper.m_Personaje_Deseleccionar;
+        public InputAction @Jock2 => m_Wrapper.m_Personaje_Jock2;
         public InputActionMap Get() { return m_Wrapper.m_Personaje; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -372,6 +439,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Deseleccionar.started += instance.OnDeseleccionar;
             @Deseleccionar.performed += instance.OnDeseleccionar;
             @Deseleccionar.canceled += instance.OnDeseleccionar;
+            @Jock2.started += instance.OnJock2;
+            @Jock2.performed += instance.OnJock2;
+            @Jock2.canceled += instance.OnJock2;
         }
 
         private void UnregisterCallbacks(IPersonajeActions instance)
@@ -394,6 +464,9 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Deseleccionar.started -= instance.OnDeseleccionar;
             @Deseleccionar.performed -= instance.OnDeseleccionar;
             @Deseleccionar.canceled -= instance.OnDeseleccionar;
+            @Jock2.started -= instance.OnJock2;
+            @Jock2.performed -= instance.OnJock2;
+            @Jock2.canceled -= instance.OnJock2;
         }
 
         public void RemoveCallbacks(IPersonajeActions instance)
@@ -424,5 +497,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         void OnDerecha(InputAction.CallbackContext context);
         void OnIzquierda(InputAction.CallbackContext context);
         void OnDeseleccionar(InputAction.CallbackContext context);
+        void OnJock2(InputAction.CallbackContext context);
     }
 }
