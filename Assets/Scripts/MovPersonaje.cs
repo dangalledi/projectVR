@@ -28,12 +28,18 @@ public class MovPersonaje : MonoBehaviour
         float hor = Input.GetAxisRaw("Horizontal");
         float ver = Input.GetAxisRaw("Vertical");
 
+        Vector3 velocity = Vector3.zero;
+
         if(ver != 0  || hor != 0 )
         {
             Vector3 direccion = (transform.forward * ver + transform.right * hor).normalized;
 
-            rigidbody.velocity = direccion * movementSpeed;
+            velocity = direccion * movementSpeed;
         }
+
+        velocity.y = rigidbody.velocity.y;
+        rigidbody.velocity = velocity;
+
 
         //transform.Translate(x * Time.deltaTime, 0, z * Time.deltaTime);
     }
