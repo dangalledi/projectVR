@@ -5228,6 +5228,10 @@ PrefabInstance:
       value: Llave
       objectReference: {fileID: 0}
     - target: {fileID: 1582621612835726801, guid: 1436513f7b239264f9d74995c0c0b042, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582621612835726801, guid: 1436513f7b239264f9d74995c0c0b042, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5296,27 +5300,13 @@ PrefabInstance:
       addedObject: {fileID: 1493728761}
     - targetCorrespondingSourceObject: {fileID: 1582621612835726801, guid: 1436513f7b239264f9d74995c0c0b042, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1493728757}
+      addedObject: {fileID: 1493728765}
   m_SourcePrefab: {fileID: 100100000, guid: 1436513f7b239264f9d74995c0c0b042, type: 3}
 --- !u!1 &1493728756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1582621612835726801, guid: 1436513f7b239264f9d74995c0c0b042, type: 3}
   m_PrefabInstance: {fileID: 1493728755}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1493728757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493728756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec13942c1c940b408a4e7bfebb25dab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventario: {fileID: 0}
-  thePlayer: {fileID: 766796100}
 --- !u!65 &1493728761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5338,6 +5328,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032467455, y: 0.008091212, z: 0.070870444}
   m_Center: {x: -0.0000000055879354, y: -0.0000000013969839, z: 0}
+--- !u!114 &1493728765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493728756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f6eb6526ae29c4c91d2981ac5a477b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
+  thePlayer: {fileID: 766796100}
 --- !u!1 &1510075555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ec89eaad22bce364eabcdae8f401ca41, type: 3}

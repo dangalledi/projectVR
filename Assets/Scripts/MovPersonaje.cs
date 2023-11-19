@@ -49,20 +49,13 @@ public class MovPersonaje : MonoBehaviour
 
         velocity.y = rigidbody.velocity.y; // Mantener la componente vertical de la velocidad
         rigidbody.velocity = velocity;
-
-
-    }
-
-    private void UpdateCameraLook()
-    {
-        float hor = Input.GetAxis("");
     }
 
     private void Update()
     {
         UpdateMovement();
-        UpdateCameraLook();
     }
+
     /*void Seleccionar()
     {
         //transform.localScale -= Vector3.one / 10;

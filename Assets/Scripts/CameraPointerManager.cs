@@ -9,13 +9,15 @@ public class CameraPointerManager : MonoBehaviour
 
     readonly string interactableTag = "interactable";
 
-    [HideInInspector]
-    public Vector3 hitPoint;
-
     ControlesMando control;
 
     LayerMask mask;
     public float distancia = 4.0f;
+
+    GameObject ultimoReconocido = null;
+
+    [HideInInspector]
+    public Vector3 hitPoint;
 
 
     private void Awake()
@@ -60,14 +62,38 @@ public class CameraPointerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, distancia, mask))
         {
             hitPoint = hit.point;
+            Deselect();
+            SelectObject(hit.transform);
+
             if (hit.transform.CompareTag(interactableTag))
             {
                 if (control.Personaje.Seleccionar.WasPerformedThisFrame())
                 {
-                    hit.collider.transform.GetComponent<AvanceObject>().ActivarObjeto();
+                    hit.collider.transform.GetComponent<MoveObject>().ActivarObjeto();
                 }
             }
+
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
+        }
+        else
+        {
+            Deselect();
         }
 
+    }
+
+    void SelectObject(Transform transform)
+    {
+        transform.GetComponent<MeshRenderer>().material.color = Color.yellow;
+        ultimoReconocido = transform.gameObject;
+    }
+
+    void Deselect()
+    {
+        if (ultimoReconocido)
+        {
+            ultimoReconocido.GetComponent<MeshRenderer>().material.color = Color.white;
+            ultimoReconocido = null;
+        }
     }
 }
