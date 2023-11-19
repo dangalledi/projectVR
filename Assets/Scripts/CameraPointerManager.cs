@@ -12,7 +12,7 @@ public class CameraPointerManager : MonoBehaviour
     ControlesMando control;
 
     LayerMask mask;
-    public float distancia = 4.0f;
+    public float distancia = 6.0f;
 
     GameObject ultimoReconocido = null;
 
@@ -62,8 +62,8 @@ public class CameraPointerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, distancia, mask))
         {
             hitPoint = hit.point;
-            Deselect();
-            SelectObject(hit.transform);
+           /* Deselect();
+            SelectObject(hit.transform);*/
 
             if (hit.transform.CompareTag(interactableTag))
             {
@@ -73,18 +73,18 @@ public class CameraPointerManager : MonoBehaviour
                 }
             }
 
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
-        else
+     /*   else
         {
             Deselect();
-        }
+        }*/
 
     }
 
     void SelectObject(Transform transform)
     {
-        transform.GetComponent<MeshRenderer>().material.color = Color.yellow;
+        transform.GetComponent<MeshRenderer>().material.color = Color.cyan;
         ultimoReconocido = transform.gameObject;
     }
 
