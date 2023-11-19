@@ -61,6 +61,51 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Arriba",
+                    "type": "Button",
+                    "id": "213da576-178a-44c6-b03e-d182c2bad703",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Abajo",
+                    "type": "Button",
+                    "id": "fa9e1e15-b183-489d-b92d-f701b3b59a2b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Derecha",
+                    "type": "Button",
+                    "id": "ea6f5a06-9bcd-4539-82db-46fbc740585e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Izquierda",
+                    "type": "Button",
+                    "id": "d5d9e392-0ade-41d4-bd35-e64274458fa4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Deseleccionar",
+                    "type": "Button",
+                    "id": "d0010676-db6f-4fd0-a04c-24dbb25f8720",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -72,6 +117,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "Seleccionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b0e8568-e4c8-4b4b-8b0e-0d8ac79f106e",
+                    "path": "<DualSenseGamepadHID>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c015ca7-656c-4ea4-88c6-36533bbcd976",
+                    "path": "<DualSenseGamepadHID>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d94af1e8-9df9-4dea-a85c-2d3e5c1c0c1b",
+                    "path": "<DualSenseGamepadHID>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Derecha",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50cde4b5-e019-4b0b-9f6a-8f4328efac22",
+                    "path": "<DualSenseGamepadHID>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Izquierda",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07a05ee7-c4e6-4db3-966e-7a6406c261fa",
+                    "path": "<DualSenseGamepadHID>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Deseleccionar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

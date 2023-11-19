@@ -13,10 +13,10 @@ public class MovPersonaje : MonoBehaviour
 
     private void Awake()
     {
-        control = new ControlesMando();
+        /*control = new ControlesMando();
         OnEnabled();
 
-        control.Personaje.Seleccionar.performed += ctx => Seleccionar();
+        control.Personaje.Seleccionar.performed += ctx => Seleccionar();*/
 
         rigidbody = GetComponent<Rigidbody>();
 
@@ -43,10 +43,10 @@ public class MovPersonaje : MonoBehaviour
 
         //transform.Translate(x * Time.deltaTime, 0, z * Time.deltaTime);
     }
-    void Seleccionar()
+    /*void Seleccionar()
     {
         //transform.localScale -= Vector3.one / 10;
-    }
+    }*/
 
     private void OnEnabled()
     {

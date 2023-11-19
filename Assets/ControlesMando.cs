@@ -83,6 +83,51 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Arriba"",
+                    ""type"": ""Button"",
+                    ""id"": ""213da576-178a-44c6-b03e-d182c2bad703"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Abajo"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa9e1e15-b183-489d-b92d-f701b3b59a2b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Derecha"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea6f5a06-9bcd-4539-82db-46fbc740585e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Izquierda"",
+                    ""type"": ""Button"",
+                    ""id"": ""d5d9e392-0ade-41d4-bd35-e64274458fa4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Deseleccionar"",
+                    ""type"": ""Button"",
+                    ""id"": ""d0010676-db6f-4fd0-a04c-24dbb25f8720"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -94,6 +139,61 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Seleccionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b0e8568-e4c8-4b4b-8b0e-0d8ac79f106e"",
+                    ""path"": ""<DualSenseGamepadHID>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c015ca7-656c-4ea4-88c6-36533bbcd976"",
+                    ""path"": ""<DualSenseGamepadHID>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d94af1e8-9df9-4dea-a85c-2d3e5c1c0c1b"",
+                    ""path"": ""<DualSenseGamepadHID>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Derecha"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50cde4b5-e019-4b0b-9f6a-8f4328efac22"",
+                    ""path"": ""<DualSenseGamepadHID>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Izquierda"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07a05ee7-c4e6-4db3-966e-7a6406c261fa"",
+                    ""path"": ""<DualSenseGamepadHID>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deseleccionar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -109,6 +209,11 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         // Personaje
         m_Personaje = asset.FindActionMap("Personaje", throwIfNotFound: true);
         m_Personaje_Seleccionar = m_Personaje.FindAction("Seleccionar", throwIfNotFound: true);
+        m_Personaje_Arriba = m_Personaje.FindAction("Arriba", throwIfNotFound: true);
+        m_Personaje_Abajo = m_Personaje.FindAction("Abajo", throwIfNotFound: true);
+        m_Personaje_Derecha = m_Personaje.FindAction("Derecha", throwIfNotFound: true);
+        m_Personaje_Izquierda = m_Personaje.FindAction("Izquierda", throwIfNotFound: true);
+        m_Personaje_Deseleccionar = m_Personaje.FindAction("Deseleccionar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -225,11 +330,21 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Personaje;
     private List<IPersonajeActions> m_PersonajeActionsCallbackInterfaces = new List<IPersonajeActions>();
     private readonly InputAction m_Personaje_Seleccionar;
+    private readonly InputAction m_Personaje_Arriba;
+    private readonly InputAction m_Personaje_Abajo;
+    private readonly InputAction m_Personaje_Derecha;
+    private readonly InputAction m_Personaje_Izquierda;
+    private readonly InputAction m_Personaje_Deseleccionar;
     public struct PersonajeActions
     {
         private @ControlesMando m_Wrapper;
         public PersonajeActions(@ControlesMando wrapper) { m_Wrapper = wrapper; }
         public InputAction @Seleccionar => m_Wrapper.m_Personaje_Seleccionar;
+        public InputAction @Arriba => m_Wrapper.m_Personaje_Arriba;
+        public InputAction @Abajo => m_Wrapper.m_Personaje_Abajo;
+        public InputAction @Derecha => m_Wrapper.m_Personaje_Derecha;
+        public InputAction @Izquierda => m_Wrapper.m_Personaje_Izquierda;
+        public InputAction @Deseleccionar => m_Wrapper.m_Personaje_Deseleccionar;
         public InputActionMap Get() { return m_Wrapper.m_Personaje; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -242,6 +357,21 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Seleccionar.started += instance.OnSeleccionar;
             @Seleccionar.performed += instance.OnSeleccionar;
             @Seleccionar.canceled += instance.OnSeleccionar;
+            @Arriba.started += instance.OnArriba;
+            @Arriba.performed += instance.OnArriba;
+            @Arriba.canceled += instance.OnArriba;
+            @Abajo.started += instance.OnAbajo;
+            @Abajo.performed += instance.OnAbajo;
+            @Abajo.canceled += instance.OnAbajo;
+            @Derecha.started += instance.OnDerecha;
+            @Derecha.performed += instance.OnDerecha;
+            @Derecha.canceled += instance.OnDerecha;
+            @Izquierda.started += instance.OnIzquierda;
+            @Izquierda.performed += instance.OnIzquierda;
+            @Izquierda.canceled += instance.OnIzquierda;
+            @Deseleccionar.started += instance.OnDeseleccionar;
+            @Deseleccionar.performed += instance.OnDeseleccionar;
+            @Deseleccionar.canceled += instance.OnDeseleccionar;
         }
 
         private void UnregisterCallbacks(IPersonajeActions instance)
@@ -249,6 +379,21 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Seleccionar.started -= instance.OnSeleccionar;
             @Seleccionar.performed -= instance.OnSeleccionar;
             @Seleccionar.canceled -= instance.OnSeleccionar;
+            @Arriba.started -= instance.OnArriba;
+            @Arriba.performed -= instance.OnArriba;
+            @Arriba.canceled -= instance.OnArriba;
+            @Abajo.started -= instance.OnAbajo;
+            @Abajo.performed -= instance.OnAbajo;
+            @Abajo.canceled -= instance.OnAbajo;
+            @Derecha.started -= instance.OnDerecha;
+            @Derecha.performed -= instance.OnDerecha;
+            @Derecha.canceled -= instance.OnDerecha;
+            @Izquierda.started -= instance.OnIzquierda;
+            @Izquierda.performed -= instance.OnIzquierda;
+            @Izquierda.canceled -= instance.OnIzquierda;
+            @Deseleccionar.started -= instance.OnDeseleccionar;
+            @Deseleccionar.performed -= instance.OnDeseleccionar;
+            @Deseleccionar.canceled -= instance.OnDeseleccionar;
         }
 
         public void RemoveCallbacks(IPersonajeActions instance)
@@ -274,5 +419,10 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     public interface IPersonajeActions
     {
         void OnSeleccionar(InputAction.CallbackContext context);
+        void OnArriba(InputAction.CallbackContext context);
+        void OnAbajo(InputAction.CallbackContext context);
+        void OnDerecha(InputAction.CallbackContext context);
+        void OnIzquierda(InputAction.CallbackContext context);
+        void OnDeseleccionar(InputAction.CallbackContext context);
     }
 }
