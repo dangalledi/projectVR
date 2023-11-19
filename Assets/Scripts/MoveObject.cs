@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class MoveObject : MonoBehaviour
 {
     public GameObject thePlayer;
-    private InventoryManager inventoryManager;
+    public InventoryManager inventoryManager;
 
     private bool activeObj = false;
     ControlesMando control;
@@ -55,7 +55,7 @@ public class MoveObject : MonoBehaviour
                 if (item != null)
                 {
                     inventoryManager.AddItem(item);
-                   // Destroy(gameObject); // Destruye el objeto de la llave para que no se pueda recoger de nuevo
+                    Destroy(gameObject); // Destruye el objeto de la llave para que no se pueda recoger de nuevo
                 }
                 //gameObject.SetActive(false);
 

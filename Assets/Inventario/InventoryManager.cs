@@ -28,10 +28,10 @@ public class InventoryManager : MonoBehaviour
     private void UpdateInventoryUI()
     {
         // Elimina los slots actuales
-        foreach (Transform child in inventoryPanel)
+        /*foreach (Transform child in inventoryPanel)
         {
             Destroy(child.gameObject);
-        }
+        }*/
 
         // Crea un nuevo slot para cada ítem en el inventario
         foreach (ItemComponent item in items)

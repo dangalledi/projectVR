@@ -6074,6 +6074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 766796100}
+  inventoryManager: {fileID: 1516304681}
 --- !u!114 &1493728769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6237,7 +6238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   slotPrefab: {fileID: 2046517677}
-  inventoryPanel: {fileID: 0}
+  inventoryPanel: {fileID: 1879281809}
 --- !u!1001 &1520012842
 PrefabInstance:
   m_ObjectHideFlags: 0
