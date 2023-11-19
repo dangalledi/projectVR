@@ -1,0 +1,268 @@
+{
+    "name": "ControlesMando",
+    "maps": [
+        {
+            "name": "Juego",
+            "id": "5e22b60b-284e-44c8-8bba-105710880748",
+            "actions": [
+                {
+                    "name": "Aumentar",
+                    "type": "Button",
+                    "id": "65c707b0-3764-445e-9b89-23efb0599bae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Disminuir",
+                    "type": "Button",
+                    "id": "d00fabfc-638b-4394-aa92-9de307f29f37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "280ed8c3-baf1-4ffe-bc7d-4aa9d38b5427",
+                    "path": "<DualSenseGamepadHID>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aumentar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ede68a6-cc3d-4b30-b5fb-6fd669f0a1fa",
+                    "path": "<DualSenseGamepadHID>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disminuir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Personaje",
+            "id": "e5507cdb-9960-432d-b5dd-07e2bad25f70",
+            "actions": [
+                {
+                    "name": "Seleccionar",
+                    "type": "Button",
+                    "id": "80b7885f-95d0-49b4-9401-d7a0b5264494",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Derecha",
+                    "type": "Button",
+                    "id": "ea6f5a06-9bcd-4539-82db-46fbc740585e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Izquierda",
+                    "type": "Button",
+                    "id": "d5d9e392-0ade-41d4-bd35-e64274458fa4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Deseleccionar",
+                    "type": "Button",
+                    "id": "d0010676-db6f-4fd0-a04c-24dbb25f8720",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jock2",
+                    "type": "Value",
+                    "id": "cd94b17b-9653-406b-880d-a355f707573a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Inventario",
+                    "type": "Button",
+                    "id": "5c46e0ed-ab48-49cb-8536-555ea60b8bf9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveObjUpDown",
+                    "type": "Value",
+                    "id": "fcf94bc5-b54e-428f-8e8f-3ac15527814e",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eda4d834-00cf-4397-bd88-271d1f857d48",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Seleccionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d94af1e8-9df9-4dea-a85c-2d3e5c1c0c1b",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Derecha",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50cde4b5-e019-4b0b-9f6a-8f4328efac22",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Izquierda",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07a05ee7-c4e6-4db3-966e-7a6406c261fa",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Deseleccionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "732d6ea0-888d-41cc-84af-3bfc857c43f8",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jock2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "52e1c070-c292-4e78-abaf-449fac2403d9",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jock2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "31f0195e-35c5-4f85-b76b-5b4cfe29fcca",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jock2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "4c46b563-fddc-4f8d-b656-f66c62c972e1",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jock2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "59f42e48-3ed3-4996-bf4b-be2ed26d709e",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jock2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "88da2642-2e00-4a43-83e8-b7b12ec35ae5",
+                    "path": "1DAxis(minValue=-0.2,maxValue=0.2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjUpDown",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5b25d63e-b9e5-477a-8aa9-2a119d0c3b98",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjUpDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "01f2f454-139a-48de-b85c-60fb075dfca7",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjUpDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "53a99109-582c-4b89-b184-74d367486476",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventario",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
