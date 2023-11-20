@@ -8,6 +8,8 @@ TagManager:
   - door
   - interactableInventario
   - Item
+  - WeaponManager
+  - slot
   layers:
   - Default
   - TransparentFX

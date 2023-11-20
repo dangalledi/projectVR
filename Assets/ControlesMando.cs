@@ -315,7 +315,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4c0eacd6-ff03-47a2-87fe-5184ed3b3237"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -326,7 +326,7 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3b2fb547-6aeb-45ca-8aa9-8b5cc48f37d0"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

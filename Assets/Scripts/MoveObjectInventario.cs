@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveObjectInventario : MonoBehaviour
 {
     public GameObject thePlayer;
+    public Inventario inventario;
 
     private bool activeObj = false;
     ControlesMando control;
@@ -25,6 +26,10 @@ public class MoveObjectInventario : MonoBehaviour
         Color.black, Color.cyan, Color.magenta, Color.white };
         activeObj = false;
         gameObject.SetActive(true);
+        inventario = thePlayer.GetComponent<Inventario>();
+
+
+
     }
 
     private void Update()
@@ -52,10 +57,13 @@ public class MoveObjectInventario : MonoBehaviour
             gameObject.transform.localPosition += new Vector3(0, cantidadMovey, cantidadMovex) * Time.deltaTime;
 
 
-            /*if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
+            if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {
-                
-            }*/
+
+                Item item = gameObject.GetComponent<Item>();
+
+                inventario.AddItem(gameObject, item.ID, item.type, item.description, item.icon);
+            }
         }
     }
 

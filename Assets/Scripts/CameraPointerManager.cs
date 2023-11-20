@@ -8,7 +8,7 @@ public class CameraPointerManager : MonoBehaviour
 {
     public static CameraPointerManager Instance;
 
-    readonly string interactableTag = "interactable", doorTag= "door", interactableInventarioTag= "interactableInventario";
+    readonly string interactableTag = "interactable", doorTag= "door", interactableInventarioTag= "Item";
     ControlesMando control;
 
     LayerMask mask;
@@ -86,6 +86,7 @@ public class CameraPointerManager : MonoBehaviour
                     hit.collider.transform.GetComponent<MoveObjectInventario>().ActivarObjeto();
                 }
             }
+
 
             //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
