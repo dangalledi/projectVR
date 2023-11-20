@@ -16,17 +16,8 @@ public class TextInventario : MonoBehaviour
         miText.text = "inventario: vacio";
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (inventario != null)
-        {
-            inve = "inventario: ";
-            inventario.objetosInventario.ForEach(obj =>
-            {
-                inve += obj.name + " ";
-            });
-            miText.text = inve;
-        }
+
     }
 }

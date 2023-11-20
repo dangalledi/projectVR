@@ -1,20 +1,17 @@
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.InputSystem;
 
-
-public class MoveObject : MonoBehaviour
+public class MoveObjectInventario : MonoBehaviour
 {
+    public GameObject thePlayer;
+    public Inventario inventario;
+
     private bool activeObj = false;
     ControlesMando control;
-  
+
     private List<Color> colorList;
     private int countColor = 0;
-
     private void Awake()
     {
         control = new ControlesMando();
@@ -29,6 +26,10 @@ public class MoveObject : MonoBehaviour
         Color.black, Color.cyan, Color.magenta, Color.white };
         activeObj = false;
         gameObject.SetActive(true);
+        inventario = thePlayer.GetComponent<Inventario>();
+
+
+
     }
 
     private void Update()
@@ -54,11 +55,14 @@ public class MoveObject : MonoBehaviour
 
             // Aplica la traslaci�n
             gameObject.transform.localPosition += new Vector3(0, cantidadMovey, cantidadMovex) * Time.deltaTime;
-           
+
 
             if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {
-                activeObj = false;
+
+                Item item = gameObject.GetComponent<Item>();
+
+                inventario.AddItem(gameObject, item.ID, item.type, item.description, item.icon);
             }
         }
     }
@@ -79,21 +83,18 @@ public class MoveObject : MonoBehaviour
 
     void Aumentar()
     {
-        if (activeObj) transform.localScale += Vector3.one / 10;
+        transform.localScale += Vector3.one / 10;
     }
 
     void Disminuir()
     {
-        if (activeObj) transform.localScale -= Vector3.one / 10;
+        transform.localScale -= Vector3.one / 10;
     }
 
     void ChangeColor()
     {
-        if (activeObj)
-        {
-            gameObject.GetComponent<MeshRenderer>().material.color = colorList[countColor];
-            if (countColor == 7) { countColor = -1; };
-            countColor++;
-        }
+        gameObject.GetComponent<MeshRenderer>().material.color = colorList[countColor];
+        if (countColor == 7) { countColor = -1; };
+        countColor++;
     }
 }

@@ -63,24 +63,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Derecha",
-                    "type": "Button",
-                    "id": "ea6f5a06-9bcd-4539-82db-46fbc740585e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Izquierda",
-                    "type": "Button",
-                    "id": "d5d9e392-0ade-41d4-bd35-e64274458fa4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Deseleccionar",
                     "type": "Button",
                     "id": "d0010676-db6f-4fd0-a04c-24dbb25f8720",
@@ -115,6 +97,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MoveObjLeftRigth",
+                    "type": "Value",
+                    "id": "a2bf6b82-6b0c-45a3-b41c-73a743441821",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Aumentar",
+                    "type": "Button",
+                    "id": "6e21c98f-0d7f-4b16-97fc-44f8fbdadcd3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Disminuir",
+                    "type": "Button",
+                    "id": "d6605860-69e1-4deb-9e37-958067b317e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeColor",
+                    "type": "Button",
+                    "id": "4af9fde7-8d94-41f3-a4aa-f2baf67656fd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -126,28 +144,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Seleccionar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d94af1e8-9df9-4dea-a85c-2d3e5c1c0c1b",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Derecha",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "50cde4b5-e019-4b0b-9f6a-8f4328efac22",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Izquierda",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -258,6 +254,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventario",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "9e8ef610-7735-4249-bfe4-c3247b2f4d74",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjLeftRigth",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "8c020266-d95a-4815-bbe6-42eeeaaf6dcc",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjLeftRigth",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "3f73ff3b-499d-4a22-a36a-ec3e58b74798",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveObjLeftRigth",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4c0eacd6-ff03-47a2-87fe-5184ed3b3237",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aumentar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b2fb547-6aeb-45ca-8aa9-8b5cc48f37d0",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disminuir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1c5467d-ca86-4a66-a70c-c407f0ab22b5",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeColor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

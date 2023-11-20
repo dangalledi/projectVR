@@ -7,7 +7,7 @@ public class MovPersonaje : MonoBehaviour
 
     ControlesMando control;
 
-    private new Rigidbody rigidbody;
+    private Rigidbody _rigidbody;
 
     public float movementSpeed;
 
@@ -18,11 +18,11 @@ public class MovPersonaje : MonoBehaviour
 
         control.Personaje.Seleccionar.performed += ctx => Seleccionar();*/
 
-        rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
 
 
     }
-    private void UpdateMovement()
+    public void UpdateMovement()
     {
         float hor = Input.GetAxisRaw("Horizontal");
         float ver = Input.GetAxisRaw("Vertical");
@@ -47,14 +47,14 @@ public class MovPersonaje : MonoBehaviour
             velocity = direccion * movementSpeed;
         }
 
-        velocity.y = rigidbody.velocity.y; // Mantener la componente vertical de la velocidad
-        rigidbody.velocity = velocity;
+        velocity.y = _rigidbody.velocity.y; // Mantener la componente vertical de la velocidad
+        _rigidbody.velocity = velocity;
     }
 
-    private void Update()
+    /*private void Update()
     {
         UpdateMovement();
-    }
+    }*/
 
     /*void Seleccionar()
     {

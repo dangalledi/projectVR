@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UI.Image;
 
 public class CameraPointerManager : MonoBehaviour
 {
     public static CameraPointerManager Instance;
 
-    readonly string interactableTag = "interactable";
-
+    readonly string interactableTag = "interactable", doorTag= "door", interactableInventarioTag= "Item";
     ControlesMando control;
 
     LayerMask mask;
@@ -62,8 +62,8 @@ public class CameraPointerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, distancia, mask))
         {
             hitPoint = hit.point;
-           /* Deselect();
-            SelectObject(hit.transform);*/
+            Deselect();
+            SelectObject(hit.transform);
 
             if (hit.transform.CompareTag(interactableTag))
             {
@@ -72,19 +72,33 @@ public class CameraPointerManager : MonoBehaviour
                     hit.collider.transform.GetComponent<MoveObject>().ActivarObjeto();
                 }
             }
+            if (hit.transform.CompareTag(doorTag))
+            {
+                if (control.Personaje.Seleccionar.WasPerformedThisFrame())
+                {
+                    hit.collider.transform.GetComponent<OpenDoor>().ActivarObjeto();
+                }
+            }
+            if (hit.transform.CompareTag(interactableInventarioTag))
+            {
+                if (control.Personaje.Seleccionar.WasPerformedThisFrame())
+                {
+                    hit.collider.transform.GetComponent<MoveObjectInventario>().ActivarObjeto();
+                }
+            }
+
 
             //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
-     /*   else
+        else
         {
             Deselect();
-        }*/
-
+        }
     }
 
     void SelectObject(Transform transform)
     {
-        transform.GetComponent<MeshRenderer>().material.color = Color.cyan;
+        transform.GetComponent<MeshRenderer>().material.color = Color.green;
         ultimoReconocido = transform.gameObject;
     }
 
