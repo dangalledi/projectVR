@@ -85,24 +85,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Derecha"",
-                    ""type"": ""Button"",
-                    ""id"": ""ea6f5a06-9bcd-4539-82db-46fbc740585e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Izquierda"",
-                    ""type"": ""Button"",
-                    ""id"": ""d5d9e392-0ade-41d4-bd35-e64274458fa4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Deseleccionar"",
                     ""type"": ""Button"",
                     ""id"": ""d0010676-db6f-4fd0-a04c-24dbb25f8720"",
@@ -137,6 +119,42 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveObjLeftRigth"",
+                    ""type"": ""Value"",
+                    ""id"": ""a2bf6b82-6b0c-45a3-b41c-73a743441821"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aumentar"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e21c98f-0d7f-4b16-97fc-44f8fbdadcd3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Disminuir"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6605860-69e1-4deb-9e37-958067b317e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeColor"",
+                    ""type"": ""Button"",
+                    ""id"": ""4af9fde7-8d94-41f3-a4aa-f2baf67656fd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,28 +166,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Seleccionar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d94af1e8-9df9-4dea-a85c-2d3e5c1c0c1b"",
-                    ""path"": ""<Gamepad>/dpad/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Derecha"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""50cde4b5-e019-4b0b-9f6a-8f4328efac22"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Izquierda"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -282,6 +278,72 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
                     ""action"": ""Inventario"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""9e8ef610-7735-4249-bfe4-c3247b2f4d74"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObjLeftRigth"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""8c020266-d95a-4815-bbe6-42eeeaaf6dcc"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObjLeftRigth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3f73ff3b-499d-4a22-a36a-ec3e58b74798"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObjLeftRigth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c0eacd6-ff03-47a2-87fe-5184ed3b3237"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aumentar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b2fb547-6aeb-45ca-8aa9-8b5cc48f37d0"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Disminuir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1c5467d-ca86-4a66-a70c-c407f0ab22b5"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeColor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -295,12 +357,14 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
         // Personaje
         m_Personaje = asset.FindActionMap("Personaje", throwIfNotFound: true);
         m_Personaje_Seleccionar = m_Personaje.FindAction("Seleccionar", throwIfNotFound: true);
-        m_Personaje_Derecha = m_Personaje.FindAction("Derecha", throwIfNotFound: true);
-        m_Personaje_Izquierda = m_Personaje.FindAction("Izquierda", throwIfNotFound: true);
         m_Personaje_Deseleccionar = m_Personaje.FindAction("Deseleccionar", throwIfNotFound: true);
         m_Personaje_Jock2 = m_Personaje.FindAction("Jock2", throwIfNotFound: true);
         m_Personaje_Inventario = m_Personaje.FindAction("Inventario", throwIfNotFound: true);
         m_Personaje_MoveObjUpDown = m_Personaje.FindAction("MoveObjUpDown", throwIfNotFound: true);
+        m_Personaje_MoveObjLeftRigth = m_Personaje.FindAction("MoveObjLeftRigth", throwIfNotFound: true);
+        m_Personaje_Aumentar = m_Personaje.FindAction("Aumentar", throwIfNotFound: true);
+        m_Personaje_Disminuir = m_Personaje.FindAction("Disminuir", throwIfNotFound: true);
+        m_Personaje_ChangeColor = m_Personaje.FindAction("ChangeColor", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -417,23 +481,27 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Personaje;
     private List<IPersonajeActions> m_PersonajeActionsCallbackInterfaces = new List<IPersonajeActions>();
     private readonly InputAction m_Personaje_Seleccionar;
-    private readonly InputAction m_Personaje_Derecha;
-    private readonly InputAction m_Personaje_Izquierda;
     private readonly InputAction m_Personaje_Deseleccionar;
     private readonly InputAction m_Personaje_Jock2;
     private readonly InputAction m_Personaje_Inventario;
     private readonly InputAction m_Personaje_MoveObjUpDown;
+    private readonly InputAction m_Personaje_MoveObjLeftRigth;
+    private readonly InputAction m_Personaje_Aumentar;
+    private readonly InputAction m_Personaje_Disminuir;
+    private readonly InputAction m_Personaje_ChangeColor;
     public struct PersonajeActions
     {
         private @ControlesMando m_Wrapper;
         public PersonajeActions(@ControlesMando wrapper) { m_Wrapper = wrapper; }
         public InputAction @Seleccionar => m_Wrapper.m_Personaje_Seleccionar;
-        public InputAction @Derecha => m_Wrapper.m_Personaje_Derecha;
-        public InputAction @Izquierda => m_Wrapper.m_Personaje_Izquierda;
         public InputAction @Deseleccionar => m_Wrapper.m_Personaje_Deseleccionar;
         public InputAction @Jock2 => m_Wrapper.m_Personaje_Jock2;
         public InputAction @Inventario => m_Wrapper.m_Personaje_Inventario;
         public InputAction @MoveObjUpDown => m_Wrapper.m_Personaje_MoveObjUpDown;
+        public InputAction @MoveObjLeftRigth => m_Wrapper.m_Personaje_MoveObjLeftRigth;
+        public InputAction @Aumentar => m_Wrapper.m_Personaje_Aumentar;
+        public InputAction @Disminuir => m_Wrapper.m_Personaje_Disminuir;
+        public InputAction @ChangeColor => m_Wrapper.m_Personaje_ChangeColor;
         public InputActionMap Get() { return m_Wrapper.m_Personaje; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -446,12 +514,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Seleccionar.started += instance.OnSeleccionar;
             @Seleccionar.performed += instance.OnSeleccionar;
             @Seleccionar.canceled += instance.OnSeleccionar;
-            @Derecha.started += instance.OnDerecha;
-            @Derecha.performed += instance.OnDerecha;
-            @Derecha.canceled += instance.OnDerecha;
-            @Izquierda.started += instance.OnIzquierda;
-            @Izquierda.performed += instance.OnIzquierda;
-            @Izquierda.canceled += instance.OnIzquierda;
             @Deseleccionar.started += instance.OnDeseleccionar;
             @Deseleccionar.performed += instance.OnDeseleccionar;
             @Deseleccionar.canceled += instance.OnDeseleccionar;
@@ -464,6 +526,18 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @MoveObjUpDown.started += instance.OnMoveObjUpDown;
             @MoveObjUpDown.performed += instance.OnMoveObjUpDown;
             @MoveObjUpDown.canceled += instance.OnMoveObjUpDown;
+            @MoveObjLeftRigth.started += instance.OnMoveObjLeftRigth;
+            @MoveObjLeftRigth.performed += instance.OnMoveObjLeftRigth;
+            @MoveObjLeftRigth.canceled += instance.OnMoveObjLeftRigth;
+            @Aumentar.started += instance.OnAumentar;
+            @Aumentar.performed += instance.OnAumentar;
+            @Aumentar.canceled += instance.OnAumentar;
+            @Disminuir.started += instance.OnDisminuir;
+            @Disminuir.performed += instance.OnDisminuir;
+            @Disminuir.canceled += instance.OnDisminuir;
+            @ChangeColor.started += instance.OnChangeColor;
+            @ChangeColor.performed += instance.OnChangeColor;
+            @ChangeColor.canceled += instance.OnChangeColor;
         }
 
         private void UnregisterCallbacks(IPersonajeActions instance)
@@ -471,12 +545,6 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @Seleccionar.started -= instance.OnSeleccionar;
             @Seleccionar.performed -= instance.OnSeleccionar;
             @Seleccionar.canceled -= instance.OnSeleccionar;
-            @Derecha.started -= instance.OnDerecha;
-            @Derecha.performed -= instance.OnDerecha;
-            @Derecha.canceled -= instance.OnDerecha;
-            @Izquierda.started -= instance.OnIzquierda;
-            @Izquierda.performed -= instance.OnIzquierda;
-            @Izquierda.canceled -= instance.OnIzquierda;
             @Deseleccionar.started -= instance.OnDeseleccionar;
             @Deseleccionar.performed -= instance.OnDeseleccionar;
             @Deseleccionar.canceled -= instance.OnDeseleccionar;
@@ -489,6 +557,18 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
             @MoveObjUpDown.started -= instance.OnMoveObjUpDown;
             @MoveObjUpDown.performed -= instance.OnMoveObjUpDown;
             @MoveObjUpDown.canceled -= instance.OnMoveObjUpDown;
+            @MoveObjLeftRigth.started -= instance.OnMoveObjLeftRigth;
+            @MoveObjLeftRigth.performed -= instance.OnMoveObjLeftRigth;
+            @MoveObjLeftRigth.canceled -= instance.OnMoveObjLeftRigth;
+            @Aumentar.started -= instance.OnAumentar;
+            @Aumentar.performed -= instance.OnAumentar;
+            @Aumentar.canceled -= instance.OnAumentar;
+            @Disminuir.started -= instance.OnDisminuir;
+            @Disminuir.performed -= instance.OnDisminuir;
+            @Disminuir.canceled -= instance.OnDisminuir;
+            @ChangeColor.started -= instance.OnChangeColor;
+            @ChangeColor.performed -= instance.OnChangeColor;
+            @ChangeColor.canceled -= instance.OnChangeColor;
         }
 
         public void RemoveCallbacks(IPersonajeActions instance)
@@ -514,11 +594,13 @@ public partial class @ControlesMando: IInputActionCollection2, IDisposable
     public interface IPersonajeActions
     {
         void OnSeleccionar(InputAction.CallbackContext context);
-        void OnDerecha(InputAction.CallbackContext context);
-        void OnIzquierda(InputAction.CallbackContext context);
         void OnDeseleccionar(InputAction.CallbackContext context);
         void OnJock2(InputAction.CallbackContext context);
         void OnInventario(InputAction.CallbackContext context);
         void OnMoveObjUpDown(InputAction.CallbackContext context);
+        void OnMoveObjLeftRigth(InputAction.CallbackContext context);
+        void OnAumentar(InputAction.CallbackContext context);
+        void OnDisminuir(InputAction.CallbackContext context);
+        void OnChangeColor(InputAction.CallbackContext context);
     }
 }

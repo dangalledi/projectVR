@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UI.Image;
 
 public class CameraPointerManager : MonoBehaviour
 {
@@ -62,8 +63,8 @@ public class CameraPointerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, distancia, mask))
         {
             hitPoint = hit.point;
-           /* Deselect();
-            SelectObject(hit.transform);*/
+            //Deselect();
+            SelectObject(hit.transform);
 
             if (hit.transform.CompareTag(interactableTag))
             {
@@ -75,16 +76,16 @@ public class CameraPointerManager : MonoBehaviour
 
             //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
-     /*   else
+        else
         {
             Deselect();
-        }*/
+        }
 
     }
 
     void SelectObject(Transform transform)
     {
-        transform.GetComponent<MeshRenderer>().material.color = Color.cyan;
+        transform.GetComponent<MeshRenderer>().material.color += Color.green;
         ultimoReconocido = transform.gameObject;
     }
 
@@ -92,7 +93,7 @@ public class CameraPointerManager : MonoBehaviour
     {
         if (ultimoReconocido)
         {
-            ultimoReconocido.GetComponent<MeshRenderer>().material.color = Color.white;
+            ultimoReconocido.GetComponent<MeshRenderer>().material.color -= Color.green;
             ultimoReconocido = null;
         }
     }
