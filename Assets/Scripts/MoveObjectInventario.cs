@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoveObjectInventario : MonoBehaviour
 {
     public GameObject thePlayer;
-    public InventoryManager inventoryManager;
 
     private bool activeObj = false;
     ControlesMando control;
@@ -53,26 +52,10 @@ public class MoveObjectInventario : MonoBehaviour
             gameObject.transform.localPosition += new Vector3(0, cantidadMovey, cantidadMovex) * Time.deltaTime;
 
 
-            if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
+            /*if (control.Personaje.Deseleccionar.WasPerformedThisFrame())
             {
-                ItemComponent item = gameObject.GetComponent<ItemComponent>();
-                activeObj = false;
-                if (item != null)
-                {
-                    inventoryManager.AddItem(item);
-                    Destroy(gameObject); // Destruye el objeto de la llave para que no se pueda recoger de nuevo
-                }
-                //gameObject.SetActive(false);
-
-                if (inventoryManager == null)
-                {
-                    Debug.Log("inventoryManager es null");
-                }
-                if (item == null)
-                {
-                    Debug.Log("item es null");
-                }
-            }
+                
+            }*/
         }
     }
 

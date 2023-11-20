@@ -14,7 +14,7 @@ public class ObjectInteraction : MonoBehaviour
 
     public void OnPointerClick()
     {
-        inventario.AddObject(gameObject);
+        //inventario.AddObject(gameObject);
         //Destroy(gameObject);
     }
 
