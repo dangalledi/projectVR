@@ -8,8 +8,7 @@ public class CameraPointerManager : MonoBehaviour
 {
     public static CameraPointerManager Instance;
 
-    readonly string interactableTag = "interactable";
-
+    readonly string interactableTag = "interactable", doorTag= "door", interactableInventarioTag= "interactableInventario";
     ControlesMando control;
 
     LayerMask mask;
@@ -63,7 +62,7 @@ public class CameraPointerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, distancia, mask))
         {
             hitPoint = hit.point;
-            //Deselect();
+            Deselect();
             SelectObject(hit.transform);
 
             if (hit.transform.CompareTag(interactableTag))
@@ -73,6 +72,20 @@ public class CameraPointerManager : MonoBehaviour
                     hit.collider.transform.GetComponent<MoveObject>().ActivarObjeto();
                 }
             }
+            if (hit.transform.CompareTag(doorTag))
+            {
+                if (control.Personaje.Seleccionar.WasPerformedThisFrame())
+                {
+                    hit.collider.transform.GetComponent<OpenDoor>().ActivarObjeto();
+                }
+            }
+            if (hit.transform.CompareTag(interactableInventarioTag))
+            {
+                if (control.Personaje.Seleccionar.WasPerformedThisFrame())
+                {
+                    hit.collider.transform.GetComponent<MoveObjectInventario>().ActivarObjeto();
+                }
+            }
 
             //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
@@ -80,12 +93,11 @@ public class CameraPointerManager : MonoBehaviour
         {
             Deselect();
         }
-
     }
 
     void SelectObject(Transform transform)
     {
-        transform.GetComponent<MeshRenderer>().material.color += Color.green;
+        transform.GetComponent<MeshRenderer>().material.color = Color.green;
         ultimoReconocido = transform.gameObject;
     }
 
@@ -93,7 +105,7 @@ public class CameraPointerManager : MonoBehaviour
     {
         if (ultimoReconocido)
         {
-            ultimoReconocido.GetComponent<MeshRenderer>().material.color -= Color.green;
+            ultimoReconocido.GetComponent<MeshRenderer>().material.color = Color.white;
             ultimoReconocido = null;
         }
     }
