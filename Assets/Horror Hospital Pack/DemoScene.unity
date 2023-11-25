@@ -902,14 +902,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68206904}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.30615425, z: -0, w: 0.95198196}
-  m_LocalPosition: {x: 0, y: 0.56, z: 0}
+  m_LocalRotation: {x: -0.05155628, y: -0.24590611, z: -0.013099387, w: 0.9678329}
+  m_LocalPosition: {x: 0.000000034138505, y: 0.55999994, z: -0.00000006201058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 472374548}
   m_Father: {fileID: 766796102}
-  m_LocalEulerAnglesHint: {x: 0, y: -35.655, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.099, y: -28.512, z: 0}
 --- !u!114 &68206906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ GameObject:
   - component: {fileID: 149221646}
   - component: {fileID: 149221648}
   - component: {fileID: 149221647}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1695,8 @@ GameObject:
   - component: {fileID: 196286714}
   - component: {fileID: 196286713}
   - component: {fileID: 196286716}
-  m_Layer: 5
+  - component: {fileID: 196286717}
+  m_Layer: 3
   m_Name: Slot (4)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -1823,6 +1824,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &196286717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196286711}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &204180065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,7 +2560,7 @@ GameObject:
   - component: {fileID: 242507931}
   - component: {fileID: 242507933}
   - component: {fileID: 242507932}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3487,7 +3509,8 @@ GameObject:
   - component: {fileID: 346107217}
   - component: {fileID: 346107216}
   - component: {fileID: 346107219}
-  m_Layer: 5
+  - component: {fileID: 346107220}
+  m_Layer: 3
   m_Name: Slot (7)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -3615,6 +3638,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &346107220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346107214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &358149136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3690,7 +3734,8 @@ GameObject:
   - component: {fileID: 364013061}
   - component: {fileID: 364013060}
   - component: {fileID: 364013063}
-  m_Layer: 5
+  - component: {fileID: 364013064}
+  m_Layer: 3
   m_Name: Slot (5)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -3818,6 +3863,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &364013064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364013058}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &378021502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457228, guid: 189dff70245addd45bf37c2e992c9912, type: 3}
@@ -3864,12 +3930,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409412615}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.51443857, z: -0, w: 0.85752726}
+  m_LocalPosition: {x: -0.0005912166, y: -1, z: 0.022352863}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 766796102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &409412619
 MonoBehaviour:
@@ -5159,7 +5225,8 @@ GameObject:
   - component: {fileID: 578034946}
   - component: {fileID: 578034945}
   - component: {fileID: 578034948}
-  m_Layer: 5
+  - component: {fileID: 578034949}
+  m_Layer: 3
   m_Name: Slot (3)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -5287,6 +5354,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &578034949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578034943}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &588256567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4cee08c7276bf274d91d84489cdf46de, type: 3}
@@ -5696,7 +5784,7 @@ GameObject:
   - component: {fileID: 619768854}
   - component: {fileID: 619768856}
   - component: {fileID: 619768855}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6813,6 +6901,7 @@ GameObject:
   - component: {fileID: 766796107}
   - component: {fileID: 766796108}
   - component: {fileID: 766796109}
+  - component: {fileID: 766796110}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6853,6 +6942,8 @@ Transform:
   - {fileID: 68206905}
   - {fileID: 635256559}
   - {fileID: 610153572}
+  - {fileID: 1516304680}
+  - {fileID: 409412618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -61.92, z: 0}
 --- !u!143 &766796103
@@ -6959,6 +7050,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+--- !u!23 &766796110
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766796100}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &769250027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 412390, guid: 381bdf9c7f27cce46b2699033a9b735a, type: 3}
@@ -7876,7 +8009,7 @@ GameObject:
   - component: {fileID: 946844831}
   - component: {fileID: 946844833}
   - component: {fileID: 946844832}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9176,7 +9309,8 @@ GameObject:
   - component: {fileID: 1104036899}
   - component: {fileID: 1104036898}
   - component: {fileID: 1104036901}
-  m_Layer: 5
+  - component: {fileID: 1104036902}
+  m_Layer: 3
   m_Name: Slot (6)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -9304,6 +9438,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1104036902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104036896}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1105809528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11654,7 +11809,8 @@ GameObject:
   - component: {fileID: 1430255858}
   - component: {fileID: 1430255857}
   - component: {fileID: 1430255860}
-  m_Layer: 5
+  - component: {fileID: 1430255861}
+  m_Layer: 3
   m_Name: Slot (1)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -11782,6 +11938,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1430255861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430255855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1442049028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b14dfb445f850ea4ba4e6b34702e612b, type: 3}
@@ -11925,7 +12102,7 @@ GameObject:
   - component: {fileID: 1462666514}
   - component: {fileID: 1462666516}
   - component: {fileID: 1462666515}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12446,7 +12623,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1516304679
 Canvas:
   m_ObjectHideFlags: 0
@@ -12456,7 +12633,7 @@ Canvas:
   m_GameObject: {fileID: 1516304676}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 68206910}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -12477,9 +12654,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516304676}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.24252066, z: -0, w: 0.97014624}
+  m_LocalPosition: {x: 0, y: 0, z: 2.7039244}
+  m_LocalScale: {x: 0.0065782345, y: 0.007462042, z: 1.8493751}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2095090559}
@@ -12487,13 +12664,13 @@ RectTransform:
   - {fileID: 1536512172}
   - {fileID: 1879281809}
   - {fileID: 319622883}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 766796102}
+  m_LocalEulerAnglesHint: {x: 0, y: -28.071, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.4538898, y: 1.01}
+  m_SizeDelta: {x: 800, y: 468.53668}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1520012842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14223,7 +14400,7 @@ GameObject:
   - component: {fileID: 1695911627}
   - component: {fileID: 1695911629}
   - component: {fileID: 1695911628}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14397,7 +14574,7 @@ GameObject:
   - component: {fileID: 1724738797}
   - component: {fileID: 1724738799}
   - component: {fileID: 1724738798}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14477,7 +14654,7 @@ GameObject:
   - component: {fileID: 1744476012}
   - component: {fileID: 1744476014}
   - component: {fileID: 1744476013}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15532,7 +15709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -16.494003}
+  m_AnchoredPosition: {x: 0, y: -16.494019}
   m_SizeDelta: {x: -415.748, y: -275.1902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879281810
@@ -15812,7 +15989,8 @@ GameObject:
   - component: {fileID: 1948078022}
   - component: {fileID: 1948078021}
   - component: {fileID: 1948078024}
-  m_Layer: 5
+  - component: {fileID: 1948078025}
+  m_Layer: 3
   m_Name: Slot (2)
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -15940,6 +16118,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1948078025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948078019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1960544270
 GameObject:
   m_ObjectHideFlags: 0
@@ -16634,7 +16833,9 @@ GameObject:
   - component: {fileID: 2024821924}
   - component: {fileID: 2024821923}
   - component: {fileID: 2024821926}
-  m_Layer: 5
+  - component: {fileID: 2024821927}
+  - component: {fileID: 2024821928}
+  m_Layer: 3
   m_Name: Slot
   m_TagString: slot
   m_Icon: {fileID: 0}
@@ -16762,6 +16963,69 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &2024821927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024821921}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2024821928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024821921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407af3bb24f787c4da8c3a511a8d46d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnXrPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2024821923}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnXrPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2024821923}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2030264953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17784,7 +18048,6 @@ SceneRoots:
   - {fileID: 766796102}
   - {fileID: 1960544271}
   - {fileID: 1196831361}
-  - {fileID: 1516304680}
   - {fileID: 1062070016}
   - {fileID: 559810410}
   - {fileID: 1251731501}
@@ -17793,5 +18056,4 @@ SceneRoots:
   - {fileID: 528968245}
   - {fileID: 1814413911}
   - {fileID: 215665882}
-  - {fileID: 409412618}
   - {fileID: 42093163}

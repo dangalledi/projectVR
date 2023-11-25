@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static UnityEngine.UI.Image;
 
 public class CameraPointerManager : MonoBehaviour
 {
     public static CameraPointerManager Instance;
+    private EventSystem eventSystem; // Sistema de eventos de Unity
 
     readonly string interactableTag = "interactable", doorTag= "door", interactableInventarioTag= "Item";
     ControlesMando control;
@@ -16,9 +18,10 @@ public class CameraPointerManager : MonoBehaviour
 
     GameObject ultimoReconocido = null;
 
+    private GameObject _gazeAtObject;
+
     [HideInInspector]
     public Vector3 hitPoint;
-
 
     private void Awake()
     {
@@ -50,6 +53,8 @@ public class CameraPointerManager : MonoBehaviour
 
     private void Start()
     {
+        eventSystem = EventSystem.current;
+
         mask = LayerMask.GetMask("Raycast Detect");
     }
 
@@ -64,6 +69,13 @@ public class CameraPointerManager : MonoBehaviour
             hitPoint = hit.point;
             Deselect();
             SelectObject(hit.transform);
+
+            if(_gazeAtObject != hit.transform.gameObject)
+            {
+                _gazeAtObject?.SendMessage("OnPointerExit");
+                _gazeAtObject = hit.transform.gameObject;
+                _gazeAtObject?.SendMessage("OnPointerEnter");
+            }
 
             if (hit.transform.CompareTag(interactableTag))
             {
@@ -84,6 +96,25 @@ public class CameraPointerManager : MonoBehaviour
                 if (control.Personaje.Seleccionar.WasPerformedThisFrame())
                 {
                     hit.collider.transform.GetComponent<MoveObjectInventario>().ActivarObjeto();
+                }
+            }
+            if (hit.transform.CompareTag("slot"))
+            {
+/*                GameObject slotUnderCursor = hit.transform.gameObject;
+*/                if (control.Personaje.Seleccionar.WasPerformedThisFrame())
+                {
+                    /*Debug.Log("LLego aca ");
+                    Debug.Log(slotUnderCursor.ToString());
+                    eventSystem.SetSelectedGameObject(slotUnderCursor);*/
+
+                    if (control.Personaje.Seleccionar.WasPerformedThisFrame()) // Click button Start
+                    {
+                        /*PointerEventData pointerData = new PointerEventData(eventSystem);
+                        pointerData.position = hit.collider.transform.position; // Asegúrate de que esta es la posición correcta
+                        ExecuteEvents.Execute(slotUnderCursor, pointerData, ExecuteEvents.pointerClickHandler);*/
+                        //hit.collider.transform.GetComponent<Slot>().Active();
+                        _gazeAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
+                    }
                 }
             }
 
