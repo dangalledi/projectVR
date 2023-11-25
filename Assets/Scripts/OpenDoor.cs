@@ -35,6 +35,7 @@ public class OpenDoor : MonoBehaviour
 
     public void ActivarObjeto()
     {
-        if (LLave.activeSelf) doorOpen = false;
+        // if (LLave.activeSelf) doorOpen = false;
+        doorOpen=false;
     }
 }

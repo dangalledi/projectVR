@@ -28,11 +28,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public void UseItem()
     {
+        Debug.Log("OnPointerClick(PointerEventData UseItem)");
+        Debug.Log(item.GetComponent<Item>().ID);
         item.GetComponent<Item>().ItemUsage();
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
+        Debug.Log("OnPointerClick(PointerEventData pointerEventData)");
+        UseItem();
+    }
+    public void Active()
+    {
+        Debug.Log("Active())");
         UseItem();
     }
 }

@@ -156,9 +156,8 @@ public class Inventario : MonoBehaviour
 
     private void HandleJoystickInput()
     {
-
         // Obtener entrada del joystick
-        float x = Input.GetAxis("Horizontal") * cursorSpeed * Time.deltaTime;
+       /* float x = Input.GetAxis("Horizontal") * cursorSpeed * Time.deltaTime;
         float y = Input.GetAxis("Vertical") * cursorSpeed * Time.deltaTime;
 
         // Mover el cursor
@@ -179,7 +178,7 @@ public class Inventario : MonoBehaviour
                     ExecuteEvents.Execute(slotUnderCursor, pointerData, ExecuteEvents.pointerClickHandler);
                 }
             }
-        }
+        }*/
     }
 
     private GameObject DetectSlotUnderCursor()
